@@ -10,7 +10,13 @@ export const exampleRouter = createTRPCRouter({
         greeting: `Hello ${input.text}`,
       };
     }),
-  getAll: protectedProcedure.query(({ ctx }) => {
-    return ctx.prisma.example.findMany();
+  getUser1: protectedProcedure.query(({ ctx }) => {
+    return ctx.auth.userId;
+  }),
+  getUser2: protectedProcedure.query(({ ctx }) => {
+    return ctx.auth.userId;
+  }),
+  getUser3: protectedProcedure.query(({ ctx }) => {
+    return ctx.auth.userId;
   }),
 });
