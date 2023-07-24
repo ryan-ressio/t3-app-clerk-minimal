@@ -10,13 +10,13 @@ export const exampleRouter = createTRPCRouter({
         greeting: `Hello ${input.text}`,
       };
     }),
-  getUser1: protectedProcedure.query(({ ctx }) => {
-    return ctx.auth.userId;
+  getOrgSlug: protectedProcedure.query(({ ctx }) => {
+    return ctx.auth.orgSlug;
   }),
-  getUser2: protectedProcedure.query(({ ctx }) => {
-    return ctx.auth.userId;
+  getOrgId: protectedProcedure.query(({ ctx }) => {
+    return ctx.auth.orgId;
   }),
-  getUser3: protectedProcedure.query(({ ctx }) => {
+  getUser: protectedProcedure.query(({ ctx }) => {
     return ctx.auth.userId;
   }),
 });

@@ -1,5 +1,6 @@
 import { type AppType } from "next/app";
 import {
+  ClerkLoaded,
   ClerkProvider, MultisessionAppSupport,
 } from "@clerk/nextjs";
 import { api } from "../utils/api";
@@ -10,9 +11,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
 
   return (
     <ClerkProvider {...pageProps}>
-      <MultisessionAppSupport>
         <Component {...pageProps} />
-      </MultisessionAppSupport>
     </ClerkProvider>
   );
 };
